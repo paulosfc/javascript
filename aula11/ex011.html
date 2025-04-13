@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de países</title>
+    <title>Sistema de Países</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
 </head>
 <body>
     <h1>Países</h1>
-    Em que país você nasceu? <input type="text" name="txt1" id="txt1">
-    <input type="button" value="Enviar" onclick="confirmar()">
+    Em que páis você nasceu? <input type="text" name="txt1" id="txt1">
+    <input type="button" value="Enviar" onclick="confimar()">
     <div id="res"></div>
 
     <script>
-        function confirmar() {
-            var pa = window.document.getElementById('txt1')
-            var res = window.document.querySelector('div#res')
-            
-            res.innerHTML = `<p>Vivendo em <strong>${pa}</strong></p>`
-
-            if (pa == 'Brasil') {
-                console.log('Você é Brasileiro')
+        function confimar() {
+            var país = window.document.querySelector("input#txt1").value;
+            var resu = window.document.getElementById("res")
+            resu.innerHTML = `<p>Nascendo em <strong>${país}</strong></p>`
+            if (país == 'Brasil') {
+                resu.innerHTML += 'Você é <strong>Brasileiro</strong>'
             } else {
-                console.log('Você é Estrangeiro!')
+                resu.innerHTML += 'Você é <strong>Estrangeiro</strong>'
             }
         }
     </script>
